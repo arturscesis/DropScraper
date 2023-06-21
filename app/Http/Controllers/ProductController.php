@@ -89,6 +89,7 @@ class ProductController extends Controller
                 $ebay->save();
             }   
         }
+        return view('home');
     }
 
     public function list(){
@@ -107,5 +108,10 @@ class ProductController extends Controller
         Amazon::where('id', $amazon_id)->delete();
         Ebay::where('id', $ebay_id)->delete();
         return view('products.list');
+    }
+
+    public function show(Request $request)
+    {
+        dd($request);
     }
 }

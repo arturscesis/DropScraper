@@ -24,6 +24,7 @@ Route::get('/', function () {
 Route::get('/add', [ProductController::class, 'create'])->name('product.add');
 Route::post('/add/store', [ProductController::class, 'store'])->name('product.store');
 Route::get('/list', [ProductController::class, 'list'])->name('product.list');
+Route::get('/show/{id}', [ProductController::class, 'show'])->name('product.show');
 
 Route::get('/admin/panel', [AdminController::class, 'show'])->name('admin.panel');
 Route::post('/admin/delete', [AdminController::class, 'delete'])->name('user.delete');
